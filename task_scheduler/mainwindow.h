@@ -2,11 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "workwindow.h"
+#include <QMap>
 
-namespace Ui {
-class MainWindow;
-}
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
@@ -21,6 +21,14 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QMap<QString, QString> userDatabase;
+
+    void loadUserData();
+    void saveUserData();
+    bool isEmailValid(const QString &email);
+    bool isUserValid(const QString &email);
+    void registerNewUser(const QString &email, const QString &password);
+    bool isPasswordCorrect(const QString &email, const QString &password);
 };
 
 #endif
