@@ -2,10 +2,10 @@
 #define WORKWINDOW_H
 
 #include <QMainWindow>
-#include "ui_workwindow.h"  // Подключаем правильный заголовочный файл
+#include "ui_workwindow.h"
 
 namespace Ui {
-class WorkWindow;  // Объявление класса
+class WorkWindow;
 }
 
 class WorkWindow : public QMainWindow
@@ -16,8 +16,15 @@ public:
     explicit WorkWindow(QWidget *parent = nullptr);
     ~WorkWindow();
 
+private slots:
+    void on_BT_myTask_clicked();
+
+    void on_BT_newTask_clicked();
+
+    void on_BT_delTask_clicked();
+
 private:
-    Ui::WorkWindow *ui;  // Указатель на сгенерированный интерфейс
+    Ui::WorkWindow *ui;
 };
 
-#endif // WORKWINDOW_H
+#endif

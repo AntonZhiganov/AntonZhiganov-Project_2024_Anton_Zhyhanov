@@ -11,14 +11,17 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    taskwindow.cpp \
     workwindow.cpp
 
 HEADERS += \
     mainwindow.h \
+    taskwindow.h \
     workwindow.h
 
 FORMS += \
     mainwindow.ui \
+    taskwindow.ui \
     workwindow.ui
 
 # Default rules for deployment.
