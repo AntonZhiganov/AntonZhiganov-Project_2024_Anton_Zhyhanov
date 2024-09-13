@@ -19,6 +19,9 @@ public:
     ~TaskWindow();
     void addTask(const QString &task);
 
+private slots:
+    void on_PB_addTask_clicked();
+
 private:
     Ui::TaskWindow *ui;
     QStringListModel *model;

@@ -9,17 +9,20 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    addtaskwindow.cpp \
     main.cpp \
     mainwindow.cpp \
     taskwindow.cpp \
     workwindow.cpp
 
 HEADERS += \
+    addtaskwindow.h \
     mainwindow.h \
     taskwindow.h \
     workwindow.h
 
 FORMS += \
+    addtaskwindow.ui \
     mainwindow.ui \
     taskwindow.ui \
     workwindow.ui

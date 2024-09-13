@@ -1,5 +1,6 @@
 #include "taskwindow.h"
 #include "ui_taskwindow.h"
+#include "addtaskwindow.h"
 
 TaskWindow::TaskWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -24,4 +25,18 @@ void TaskWindow::addTask(const QString &task)
     QStringList taskList = model->stringList();
     taskList.append(task);
     model->setStringList(taskList);
+}
+
+void TaskWindow::on_PB_addTask_clicked()
+{
+    addTaskWindow dialog(this);
+    if (dialog.exec() == QDialog::Accepted) {
+        QString taskName = dialog.getTaskName();
+        QString taskDescription = dialog.getTaskDescription();
+        QDate startDate = dialog.getStartDate();
+        QDate endDate = dialog.getEndDate();
+
+        QString fullTaskDetails = taskName + ": " + taskDescription + " (" + startDate.toString() + " - " + endDate.toString() + ")";
+        addTask(fullTaskDetails);
+}
 }
