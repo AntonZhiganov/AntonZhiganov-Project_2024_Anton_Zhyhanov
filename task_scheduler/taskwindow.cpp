@@ -40,3 +40,18 @@ void TaskWindow::on_PB_addTask_clicked()
         addTask(fullTaskDetails);
 }
 }
+
+void TaskWindow::on_PB_deleteTask_clicked()
+{
+    QModelIndex selectedIndex = ui->LV_myTask->currentIndex();
+
+    if (!selectedIndex.isValid()) {
+
+        return;
+    }
+
+    QStringList taskList = model->stringList();
+    taskList.removeAt(selectedIndex.row());
+    model->setStringList(taskList);
+}
+

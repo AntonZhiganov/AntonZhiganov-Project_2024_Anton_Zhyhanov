@@ -22,6 +22,8 @@ public:
 private slots:
     void on_PB_addTask_clicked();
 
+    void on_PB_deleteTask_clicked();
+
 private:
     Ui::TaskWindow *ui;
     QStringListModel *model;
